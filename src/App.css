@@ -1,0 +1,54 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, sans-serif; background: #f4f5f7; color: #222; }
+
+.app { max-width: 1100px; margin: 0 auto; padding: 16px; }
+h1 { margin: 8px 0 16px; }
+.message { padding: 40px; text-align: center; font-size: 1.2rem; }
+.error { color: #c0392b; }
+
+.controls { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+.controls input, .controls select {
+  padding: 8px 12px; font-size: 1rem; border: 1px solid #ccc; border-radius: 8px;
+}
+.controls input { flex: 1; min-width: 200px; }
+
+.layout { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
+@media (max-width: 700px) { .layout { grid-template-columns: 1fr; } }
+
+.list { list-style: none; margin: 0; padding: 0; max-height: 75vh; overflow-y: auto;
+  background: white; border-radius: 12px; }
+.list.empty { padding: 20px; }
+.row { display: flex; align-items: center; gap: 12px; width: 100%; padding: 6px 12px;
+  border: none; background: none; cursor: pointer; text-align: left; font-size: 1rem; }
+.row:hover { background: #f0f0f0; }
+.row.selected { background: #e3edff; }
+.name { text-transform: capitalize; font-weight: 600; flex: 1; }
+
+.types { display: flex; gap: 4px; flex-wrap: wrap; }
+.badge { padding: 2px 8px; border-radius: 999px; font-size: 0.8rem; color: white;
+  background: #888; text-transform: capitalize; }
+.badge.fire { background: #ee8130; }  .badge.water { background: #6390f0; }
+.badge.grass { background: #7ac74c; } .badge.electric { background: #d4b000; }
+.badge.poison { background: #a33ea1; } .badge.flying { background: #a98ff3; }
+.badge.bug { background: #a6b91a; }   .badge.normal { background: #a8a77a; }
+.badge.ground { background: #c4a24c; } .badge.fairy { background: #d685ad; }
+.badge.fighting { background: #c22e28; } .badge.psychic { background: #f95587; }
+.badge.rock { background: #b6a136; }  .badge.ghost { background: #735797; }
+.badge.ice { background: #7ec8c4; }   .badge.dragon { background: #6f35fc; }
+.badge.steel { background: #8a8aa8; }
+
+.details { background: white; border-radius: 12px; padding: 20px; position: sticky; top: 16px; }
+.details.empty { color: #777; text-align: center; padding: 60px 20px; }
+.big { width: 200px; height: 200px; display: block; margin: 0 auto; }
+.number { color: #888; margin: 0; text-align: center; }
+.details h2 { text-align: center; margin: 4px 0 8px; }
+.details .types { justify-content: center; margin-bottom: 12px; }
+.info p { margin: 4px 0; text-transform: capitalize; }
+
+.stats { list-style: none; padding: 0; margin: 0; }
+.stats li { display: grid; grid-template-columns: 130px 40px 1fr; align-items: center;
+  gap: 8px; margin: 6px 0; }
+.stat-name { text-transform: capitalize; font-size: 0.9rem; }
+.stat-value { font-weight: 700; text-align: right; }
+.bar { background: #eee; height: 8px; border-radius: 4px; overflow: hidden; }
+.bar span { display: block; height: 100%; background: #4a7dff; }
